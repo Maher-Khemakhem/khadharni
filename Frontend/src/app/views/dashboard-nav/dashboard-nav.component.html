@@ -1,0 +1,117 @@
+
+
+<nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+    <div class="px-3 py-3 lg:px-5 lg:pl-3">
+      <div class="flex items-center justify-between">
+        
+        <div class="flex items-center justify-start rtl:justify-end">
+          <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+              <span class="sr-only">Open sidebar</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                 <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+              </svg>
+           </button>
+          <a href="#" class="flex ms-2 md:me-24">
+            <img src="logo.png" class="h-8 me-3" alt="Dinaruis Logo" />
+            <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Dinaruis</span>
+          </a>
+        </div>
+        
+        <div class="flex items-center">
+            <div class="flex items-center ms-3">
+              <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md ">
+                <button 
+                  (click)="startCampagne()" 
+                  *ngIf="user.role === 'ENTREPRENEUR'" 
+                  class="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg sm:w-auto w-10 h-10">
+                  
+                  <span class="sm:block hidden">Start a Campaign</span>
+                  <svg class="w-6 h-6 sm:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 3l14 9-14 9V3z"></path>
+                  </svg>
+                </button>
+              </div>
+              
+              <div>
+                
+                <div class="flex items-center space-x-4">
+                   <!-- User Profile Button -->
+                   <button type="button" 
+                   class="flex items-center space-x-2 text-sm bg-gray-800 rounded-full px-3 py-2 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" 
+                   aria-expanded="false" 
+                   data-dropdown-toggle="dropdown-user">
+              
+             <span class="text-white">Ahmed Kallel</span>
+             <img class="w-8 h-8 rounded-full" 
+                  src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" 
+                  alt="Ahmed Kallel's profile photo">
+           </button>
+                  <button type="button" data-dropdown-toggle="dropdown-notif"
+                            class="relative p-2 text-gray-400 bg-gray-800 rounded-full hover:text-white focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14V9a6 6 0 00-12 0v5c0 .386-.146.74-.405 1.005L4 17h5m6 0a3 3 0 11-6 0"></path>
+                            </svg>
+                            <!-- Notification Badge -->
+                            <span class="absolute top-1 right-1 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">3</span>
+                        </button>
+
+                        <!-- Notification Dropdown -->
+                        <div id="dropdown-notif" class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-md shadow-lg dark:bg-gray-700 dark:divide-gray-600 w-64">
+                            <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">Notifications</div>
+                            <ul class="py-1 text-gray-700 dark:text-gray-300">
+                                <li>
+                                    <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                        🔔 New comment on your post
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                        📩 You have a new message
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                                        ✅ Task completed successfully
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="px-4 py-2 text-center border-t border-gray-200 dark:border-gray-600">
+                                <a href="#" class="text-sm text-blue-500 hover:underline dark:text-blue-400">View all</a>
+                            </div>
+                        </div>
+                
+                 
+                </div>
+                
+              </div>
+             
+              <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-sm shadow-sm dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
+                <div class="px-4 py-3" role="none">
+                  <p class="text-sm text-gray-900 dark:text-white" role="none">
+                    Ahmed Kallel
+                  </p>
+                  <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">
+                    ahmedkallel.com
+                  </p>
+                </div>
+                <ul class="py-1" role="none">
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
+                  </li>
+                  <li>
+                    <a href="#" (click)="logout()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </nav>
+  

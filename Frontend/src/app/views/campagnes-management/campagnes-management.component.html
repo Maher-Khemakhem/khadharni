@@ -1,0 +1,91 @@
+<div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Campaign ID
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Campaign Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Description
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Category
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Goal Amount
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Raised Amount
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Start Date
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    End Date
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Status
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Number of Backers
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Creator
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example Campaign 1 -->
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200" *ngFor="let element of elements">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    C123456
+                </th>
+                <td class="px-6 py-4">
+                    {{element.title}}
+                </td>
+                <td class="px-6 py-4">
+                    {{element.description}}
+                </td>
+                <td class="px-6 py-4">
+                    {{element.type}}
+                </td>
+                <td class="px-6 py-4">
+                    {{element.amountGoal}}
+                </td>
+                <td class="px-6 py-4">
+                    {{element.raisedAmount}}
+                </td>
+                <td class="px-6 py-4">
+                    {{element.startDate}}
+                </td>
+                <td class="px-6 py-4">
+                    {{element.endDate}}
+                </td>
+                <td class="px-6 py-4">
+                    {{element.status}}
+                </td>
+                <td class="px-6 py-4">
+                    150
+                </td>
+                <td class="px-6 py-4">
+                    {{element.user.firstName}}
+                </td>
+                <td class="px-6 py-4">
+                    <button class="px-4 py-2 text-sm text-white bg-blue-500 rounded">View</button>
+                    <button class="px-4 py-2 text-sm text-white bg-yellow-500 rounded">Edit</button>
+                    <button class="px-4 py-2 text-sm text-white bg-green-500 rounded">Activate</button>
+                    <button class="px-4 py-2 text-sm text-white bg-red-500 rounded">Archive</button>
+                    <button class="px-4 py-2 text-sm text-white bg-red-500 rounded">Delete</button>
+                </td>
+            </tr>
+
+            
+        </tbody>
+    </table>
+</div>

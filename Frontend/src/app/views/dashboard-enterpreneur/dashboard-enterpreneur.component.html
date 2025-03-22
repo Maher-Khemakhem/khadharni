@@ -1,0 +1,70 @@
+<div class="bg-gray-100 dark:bg-gray-900 p-6">
+  <h1 class="text-gray-700 dark:text-white text-3xl font-bold">
+      Welcome {{user.firstName}} 👋
+  </h1>
+
+  <br>
+
+  <!-- KPI Cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+      <div class="flex flex-col items-center justify-center h-24 rounded-lg bg-gray-50 dark:bg-gray-800 p-4 shadow-md">
+          <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-300">Total Campaigns</h2>
+          <p class="text-3xl font-bold text-gray-900 dark:text-white">
+              {{ totalCampaigns.active + totalCampaigns.completed + totalCampaigns.pending }}
+          </p>
+      </div>
+      <div class="flex flex-col items-center justify-center h-24 rounded-lg bg-gray-50 dark:bg-gray-800 p-4 shadow-md">
+          <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-300">Total Collected</h2>
+          <p class="text-3xl font-bold text-gray-900 dark:text-white">${{ totalCollected }}</p>
+      </div>
+      <div class="flex flex-col items-center justify-center h-24 rounded-lg bg-gray-50 dark:bg-gray-800 p-4 shadow-md">
+          <h2 class="text-xl font-semibold text-gray-700 dark:text-gray-300">Total Contributors</h2>
+          <p class="text-3xl font-bold text-gray-900 dark:text-white">{{ totalContributors }}</p>
+      </div>
+  </div>
+
+  <!-- Line Chart Container -->
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+    <div class="h-60 w-full mb-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg shadow-md">
+      <canvas id="lineChart"></canvas>
+  </div>
+  <div class="h-60 w-full mb-4 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg shadow-md">
+    <canvas id="doughnutChart2"></canvas>
+</div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+      <div class="h-60 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg shadow-md">
+          <canvas id="doughnutChart"></canvas>
+      </div>
+      <div class="h-60 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg shadow-md">
+          <canvas id="barChart"></canvas>
+      </div>
+  </div>
+
+</div>
+
+<!-- Dropdown with Flowbite -->
+<div class="relative inline-block text-left">
+  <button id="dropdownDefaultButton"
+      class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white flex items-center"
+      (click)="toggleDropdown()">
+      {{ selectedTimeRange }}
+      <svg class="w-2.5 h-2.5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+      </svg>
+  </button>
+
+  <div id="dropdown-menu"
+      [class.hidden]="!dropdownOpen"
+      class="absolute z-10 bg-white divide-y divide-gray-100 rounded-lg shadow-md w-44 dark:bg-gray-700">
+      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+          <li *ngFor="let option of timeRanges" (click)="selectTimeRange(option)">
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                  {{ option }}
+              </a>
+          </li>
+      </ul>
+  </div>
+</div>
